@@ -34,7 +34,7 @@
         background-color : #eaeaea;
         min-height : 120px;
         margin : 20px 0px 20px 0px;
-        padding : 18px;
+        padding : 30px;
         border-radius : 18px;
         display : flex;
         flex-direction : row;
@@ -64,6 +64,21 @@
     .centeredText {
         text-align : center;
     }
+
+    .portfolioContainer {
+        display : flex;
+        direction : row;
+    }
+
+    .portfolioImage {
+        height : 320px;
+        width : 480px;
+        border-radius : 12px;
+    }
+
+    .portfolioTextContainer {
+        margin : 0px 40px 0px 40px;
+    }
 </style>
 
 <div>
@@ -83,6 +98,14 @@
     <h4 class="centeredText">Portfolio</h4>
     @foreach (ProfileItem profileItem in Model.profileItems)
     {
-        <div class="roundedContainer"></div>
+        <div class="roundedContainer">
+            <div class="portfolioContainer">
+                <img class="portfolioImage" src="@Url.Content(profileItem.itemImageAddress)" />
+                <div class="portfolioTextContainer">
+                    <h4>@profileItem.itemTitle</h4>
+                    <p>@profileItem.itemDescription</p>
+                </div>
+            </div>
+        </div>
     }
 </div>
