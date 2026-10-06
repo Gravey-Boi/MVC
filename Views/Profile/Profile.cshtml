@@ -1,0 +1,88 @@
+﻿@{
+}
+
+@model MVC.Models.Profile
+
+<style>
+    .invisContainer {
+        margin : 40px 0px 40px 0px;
+        display : flex;
+        flex-direction : row;
+        align-items : center;
+        justify-content : flex-start;
+    }
+
+    .invisContainerColumn {
+        margin : 40px 0px 40px 0px;
+        display : flex;
+        flex-direction : column;
+        align-items : flex-start;
+        justify-content : flex-start;
+    }
+
+    .profileTextContainer {
+        margin : 0px 40px 0px 40px;
+        display : flex;
+        flex-direction : column;
+        align-self : flex-start;
+        align-items : flex-start;
+        justify-content : flex-start;
+        gap : 8px;
+    }
+
+    .roundedContainer {
+        background-color : #eaeaea;
+        min-height : 120px;
+        margin : 20px 0px 20px 0px;
+        padding : 18px;
+        border-radius : 18px;
+        display : flex;
+        flex-direction : row;
+        align-items : flex-start;
+        justify-content : flex-start;
+    }
+
+    .horizontalDivider {
+        height: 4px;
+        border : 0px;
+        border-radius : 8px;
+        background-color : #eaeaea;
+        opacity : 1;
+    }
+
+    .profileImage {
+        width : 128px;
+        height : 128px;
+        border-radius : 12px;
+    }
+
+    .description {
+        white-space : pre-line;
+        margin : 0px;
+    }
+
+    .centeredText {
+        text-align : center;
+    }
+</style>
+
+<div>
+    <div class="invisContainer">
+        <img class="profileImage" src="@Url.Content(Model.profileImageAddress)"/>
+        <div class="profileTextContainer">
+            <h4>Name: @Model.firstName @Model.middleName @Model.lastName</h4>
+            <h4>Age: @Model.age</h4>
+        </div>
+    </div>
+    <hr class="horizontalDivider" />    
+    <div class="invisContainerColumn">
+        <h4>Description</h4>
+        <p class="description">@Model.profileDescription</p>
+    </div>
+    <hr class="horizontalDivider" />
+    <h4 class="centeredText">Portfolio</h4>
+    @foreach (ProfileItem profileItem in Model.profileItems)
+    {
+        <div class="roundedContainer"></div>
+    }
+</div>
