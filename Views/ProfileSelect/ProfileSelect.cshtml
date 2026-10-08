@@ -4,6 +4,8 @@
 @{
 }
 
+@model List<ProfileSelectItem>
+
 <style>
     .profilesText {
         align-self : center;
@@ -11,13 +13,38 @@
 
     .profileButtonsContainer {
         display : flex;
-        flow-direction : row;
+        flex-direction : row;
+    }
+
+    .profileSelectButton {
+        width : 128px;
+        height : 96px;
+        background-color : #E8E8E8;
+        border-radius : 8px;
+        border : 0px;
+        text-align : center;
+        align-content : center;
+        line-height : 0px;
+        text-decoration : none;
+        color : black;
+        font-size : 20px;
+    }
+
+    .profileSelectButton:hover {
+        background-color: #D9D9D9;
+    }
+
+    .profileSelectButton:active {
+        background-color: #C7C7C7;
     }
 </style>
 
 <div>
     <h4 class="profilesText">Profiles</h4>
     <div class="profileButtonsContainer">
-
+        @foreach(ProfileSelectItem profile in Model)
+        {
+            <a class="profileSelectButton" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="">@profile.profileName</a>
+        }
     </div>
 </div>
