@@ -12,14 +12,14 @@ namespace MVC.Controllers
 
             ProfileSelectItem profile1 = new ProfileSelectItem();
 
-            profile1.profileName = "Benito";
+            profile1.profileName = "None";
             profile1.profile = null;
 
             profiles.Add(profile1);
 
             ProfileSelectItem profile2 = new ProfileSelectItem();
 
-            profile2.profileName = "Example";
+            profile2.profileName = "None";
             profile2.profile = null;
 
             profiles.Add(profile2);
