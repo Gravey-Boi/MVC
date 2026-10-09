@@ -4,7 +4,7 @@
 @{
 }
 
-@model List<ProfileSelectItem>
+@model List<ProfileSelect>
 
 <style>
     .profilesText {
@@ -43,9 +43,9 @@
 <div>
     <h4 class="profilesText">Profiles</h4>
     <div class="profileButtonsContainer">
-        @foreach(ProfileSelectItem profile in Model)
+        @foreach(ProfileSelect profile in Model)
         {
-            <a class="profileSelectButton" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="">@profile.profileName</a>
+            <a class="profileSelectButton" asp-area="" asp-controller="Profile" asp-action="Profile" asp-route-profileID="@profile.profileID">@profile.displayName</a>
         }
     </div>
 </div>

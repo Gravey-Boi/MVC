@@ -20,4 +20,10 @@
         public string itemDescription { get; set; }
         public string itemImageAddress { get; set; }
     }
+
+    public class ProfileSelect
+    {
+        public string displayName { get; set; }
+        public int profileID { get; set; }
+    }
 }
