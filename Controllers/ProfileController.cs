@@ -66,7 +66,7 @@ namespace MVC.Controllers
 
             profile3.age = 156;
 
-            profile3.profileDescription = "Do not take me for granted.";
+            profile3.profileDescription = "It was my continued decision to struggle\r\nAlways, I returned";
             profile3.profileImageAddress = "~/Images/ground.jpg";
 
             profile3.profileItems = new List<ProfileItem>();
